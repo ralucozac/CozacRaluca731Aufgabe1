@@ -2,6 +2,9 @@
 
 
 
+
+import modelRezolvat.src.;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -22,7 +25,7 @@ public class Functionality {
                 listaDeEvenimente.add(new EreignissRecord(
                         Date.parse(parts[0]),
                         parts[1],
-                        House.valueOf(parts[2].toUpperCase()),
+                        Casa.valueOf(parts[2].toUpperCase()),
                         parts[3],
                         Integer.parseInt(parts[4])
                 ));
@@ -42,10 +45,18 @@ public class Functionality {
         listaDeEvenimente.stream()
                 .map(EreignissRecord::getMitgliedsname)
                 .distinct()
-                .filter(name -> name.toUpperCase().startsWith(String.valueOf(startLetter).toUpperCase())) // filtreaza ceva.toUppercase astfel incat sa inceapa valuare in String to uppercase
+                .filter(name -> name.toLowerCase().startsWith(String.valueOf(startLetter).toLowerCase())) // filtreaza ceva.toUppercase astfel incat sa inceapa valuare in String to uppercase
                 .forEach(System.out::println);
     }
-
+    public void showStarkEreignisss() {
+        listaDeEvenimente.stream()
+                .filter(student -> student.getCasa() == Casa.stark)
+                .map(EreignissRecord::getMitgliedsname)
+                .distinct()
+                .sorted()
+                .forEach(System.out::println);
+    }
+    
 
 
 }

@@ -3,14 +3,14 @@ import java.util.Date;
 public class EreignissRecord {
     private int id;
     private String mitgliedsname;
-    private Haus haus;
+    private Casa casa;
     private String ereignis;
     private Date datum;
 
-    public EreignissRecord(int id, String mitgliedsname, Haus haus, String ereignis, Date datum) {
+    public EreignissRecord(int id, String mitgliedsname, Casa casa, String ereignis, Date datum) {
         this.id = id;
         this.mitgliedsname = mitgliedsname;
-        this.haus = haus;
+        this.casa = casa;
         this.ereignis = ereignis;
         this.datum = datum;
     }
@@ -31,12 +31,12 @@ public class EreignissRecord {
         this.mitgliedsname = mitgliedsname;
     }
 
-    public Haus getHaus() {
-        return haus;
+    public Casa getCasa() {
+        return casa;
     }
 
-    public void setHaus(Haus haus) {
-        this.haus = haus;
+    public void setCasa(Casa casa) {
+        this.casa = casa;
     }
 
     public String getEreignis() {
